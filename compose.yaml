@@ -13,7 +13,7 @@ services:
     networks:
       - app-network
     volumes:
-      - "./app:/app"
+      - "./main-challenge/app:/app"
 
 networks:
   app-network:
