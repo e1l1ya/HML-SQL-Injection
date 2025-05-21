@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  flask-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: webserver
+    ports:
+      - "8081:8081"
+    environment:
+      - test_flag=HelloWorld
+    networks:
+      - app-network
+    volumes:
+      - "./app:/app"
+
+networks:
+  app-network:
+    driver: bridge
